@@ -1,7 +1,7 @@
 # NAME:     homeland/base
 FROM ruby:2.5-alpine
 
-MAINTAINER Jason Lee "https://github.com/huacnlee"
+MAINTAINER Jason Lee "https://github.com/cardanofans"
 RUN gem install bundler
 RUN apk --update add ca-certificates nodejs tzdata imagemagick &&\
     apk add --virtual .builddeps build-base ruby-dev libc-dev openssl linux-headers postgresql-dev \
@@ -9,4 +9,3 @@ RUN apk --update add ca-certificates nodejs tzdata imagemagick &&\
     rm /etc/nginx/conf.d/default.conf
 
 RUN curl https://get.acme.sh | sh
-
